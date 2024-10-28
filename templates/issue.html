@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Issue Book</h1>
+        <form method="POST" action="{{ url_for('save_issue_book') }}">
+            <div class="form-group">
+                <label for="book_id">Select Book</label>
+                <select name="book_id" class="form-control" required>
+                    <option value="">-- Select a Book --</option>
+                    {% for book in books %}
+                    <option value="{{ book.id }}">{{ book.title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="member_id">Select Member</label>
+                <select name="member_id" class="form-control" required>
+                    <option value="">-- Select a Member --</option>
+                    {% for member in members %}
+                    <option value="{{ member.id }}">{{ member.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="issue_date">Issue Date</label>
+                <input type="date" name="issue_date" class="form-control" value="{{ current_date }}" required>
+            </div>
+            <div class="form-group">
+                <label for="due_date">Due Date</label>
+                <input type="date" name="due_date" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Issue Book</button>
+            <a href="{{ url_for('transactions') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

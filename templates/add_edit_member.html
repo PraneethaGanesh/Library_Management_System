@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if member %}Edit Member{% else %}Add Member{% endif %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">{% if member %}Edit Member{% else %}Add Member{% endif %}</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ member.name if member else '' }}" required>
+            </div>
+            <div class="form-group">
+                <label for="debt">Debt</label>
+                <input type="number" step="0.01" class="form-control" id="debt" name="debt" value="{{ member.debt if member else 0.0 }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">{% if member %}Update Member{% else %}Add Member{% endif %}</button>
+        </form>
+    </div>
+</body>
+</html>

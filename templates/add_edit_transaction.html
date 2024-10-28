@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Transaction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Add Transaction</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="book_id">Book ID</label>
+                <input type="text" class="form-control" id="book_id" name="book_id" required>
+            </div>
+            <div class="form-group">
+                <label for="member_id">Member ID</label>
+                <input type="text" class="form-control" id="member_id" name="member_id" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Transaction</button>
+        </form>
+    </div>
+</body>
+</html>

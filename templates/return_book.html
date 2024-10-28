@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Return Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Return Book</h1>
+        <p>Returning: {{ transaction.book.title }} issued to {{ transaction.member.name }}</p>
+        <p>Issue Date: {{ transaction.issue_date.strftime('%Y-%m-%d') }}</p>
+        <form method="POST">
+            <button type="submit" class="btn btn-primary">Confirm Return</button>
+            <a href="{{ url_for('list_transactions') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
